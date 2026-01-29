@@ -1,0 +1,6 @@
+app:
+  environment: qa
+
+logging:
+  level:
+    root: WARN

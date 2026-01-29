@@ -1,0 +1,7 @@
+app:
+  environment: local
+
+logging:
+  level:
+    root: INFO
+    com.enterprise.platform: DEBUG
