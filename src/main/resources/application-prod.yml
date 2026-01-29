@@ -4,3 +4,15 @@ app:
 logging:
   level:
     root: ERROR
+
+
+db:
+  host: ${DB_HOST}
+  port: ${DB_PORT}
+  database: ${DB_NAME}
+  username: ${DB_USER}
+  password: ${DB_PASSWORD}
+  pool:
+    maxSize: 30
+    minIdle: 10
+

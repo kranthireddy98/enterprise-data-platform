@@ -5,3 +5,14 @@ logging:
   level:
     root: INFO
     com.enterprise.platform: DEBUG
+
+
+db:
+  host: ${DB_HOST:localhost}
+  port: ${DB_PORT:1433}
+  database : ${DB_NAME:learning_platform}
+  username : ${DB_USER:sa}
+  password: ${DB_PASSWORD:mkrmkrmk}
+  pool:
+    maxSize: 10
+    minIdle : 2

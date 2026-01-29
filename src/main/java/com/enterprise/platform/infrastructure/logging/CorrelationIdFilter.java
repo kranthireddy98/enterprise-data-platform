@@ -1,6 +1,6 @@
 package com.enterprise.platform.infrastructure.logging;
 
-import com.enterprise.platform.config.AppProperties;
+import com.enterprise.platform.config.profile.AppProperties;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

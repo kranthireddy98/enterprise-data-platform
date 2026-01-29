@@ -1,4 +1,4 @@
-package com.enterprise.platform.config;
+package com.enterprise.platform.config.profile;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;

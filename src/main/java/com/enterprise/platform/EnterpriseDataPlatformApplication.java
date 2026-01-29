@@ -1,6 +1,6 @@
 package com.enterprise.platform;
 
-import com.enterprise.platform.config.AppProperties;
+import com.enterprise.platform.config.profile.AppProperties;
 import jakarta.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

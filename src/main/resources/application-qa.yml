@@ -4,3 +4,13 @@ app:
 logging:
   level:
     root: WARN
+
+db:
+  host: ${DB_HOST}
+  port: ${DB_PORT}
+  database: ${DB_NAME}
+  username: ${DB_USER}
+  password: ${DB_PASSWORD}
+  pool:
+    maxSize: 20
+    minIdle: 5
