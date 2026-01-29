@@ -10,7 +10,7 @@ logging:
 db:
   host: ${DB_HOST:localhost}
   port: ${DB_PORT:1433}
-  database : ${DB_NAME:learning_platform}
+  database : ${DB_NAME:enterprise_platform}
   username : ${DB_USER:sa}
   password: ${DB_PASSWORD:mkrmkrmk}
   pool:

@@ -16,7 +16,6 @@ public class TestController {
     @GetMapping
     public String test() {
         log.info("Test endpoint called");
-        log.warn("TEST QA ENV");
         return "OK";
     }
 }

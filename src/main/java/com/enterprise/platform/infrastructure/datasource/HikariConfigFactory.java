@@ -2,14 +2,16 @@ package com.enterprise.platform.infrastructure.datasource;
 
 import com.enterprise.platform.config.profile.DbProperties;
 import com.zaxxer.hikari.HikariConfig;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor
 public class HikariConfigFactory {
 
     private final DbProperties props;
+
+    public HikariConfigFactory(DbProperties props) {
+        this.props = props;
+    }
 
     public HikariConfig create (DataSourceType type){
         HikariConfig config = new HikariConfig();
