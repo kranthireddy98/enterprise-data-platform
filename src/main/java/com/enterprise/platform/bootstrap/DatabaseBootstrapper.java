@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 @Component
 public class DatabaseBootstrapper {
 
-    Logger log = LoggerFactory.getLogger(DatabaseBootstrapper.class);
+    private static final Logger log = LoggerFactory.getLogger(DatabaseBootstrapper.class);
 
 
     private final HikariConfigFactory configFactory;
