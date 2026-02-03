@@ -57,4 +57,17 @@ public class JdbcExecutor {
             throw new RuntimeException(e);
         }
     }
+
+    public int update(
+            Connection con,
+            String sql,
+            Map<String,Object> params
+    )  {
+        try (PreparedStatement ps  = binder.bind(con,sql,params)){
+            return ps.executeUpdate();
+
+        }catch (Exception e){
+            throw new RuntimeException("updated Failed",e);
+        }
+    }
 }

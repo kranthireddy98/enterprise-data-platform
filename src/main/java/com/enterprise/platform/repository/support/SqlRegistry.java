@@ -16,6 +16,10 @@ public class SqlRegistry {
     void register(){
         loader.load(SqlKey.CUSTOMER_FETCH_BY_ID, SqlKey.CUSTOMER_FETCH_BY_ID.getKey());
         loader.load(SqlKey.CUSTOMER_FETCH_ALL,SqlKey.CUSTOMER_FETCH_ALL.getKey());
+        loader.load(SqlKey.CUSTOMER_INSERT,SqlKey.CUSTOMER_INSERT.getKey());
+
+
+        loader.load(SqlKey.COUNTRY_FETCH_ACTIVE_BY_CODE,SqlKey.COUNTRY_FETCH_ACTIVE_BY_CODE.getKey());
     }
 
     public String get(SqlKey key){

@@ -56,6 +56,8 @@ public class DatabaseBootstrapper {
         executeSql(ds, "sql/tables/master_tables.sql");
         executeSql(ds, "sql/tables/core_tables.sql");
         executeSql(ds, "sql/tables/ops_tables.sql");
+
+        executeSql(ds, "sql/data/master_seed.sql");
     }
 
     private void createSchema(DataSource ds) throws Exception {
