@@ -1,39 +1,40 @@
-package com.EnterprisePlatform.repository.support;
+package com.EnterprisePlatform.transaction;
 
 import com.EnterprisePlatform.infrastructure.datasource.DataSourceManager;
 import com.EnterprisePlatform.infrastructure.datasource.DataSourceType;
 import com.EnterprisePlatform.infrastructure.datasource.HikariConfigFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.zaxxer.hikari.HikariConfig;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
+import javax.xml.crypto.Data;
 import java.sql.Connection;
-
 
 @Component
 public class TransactionManager {
 
     private final DataSourceManager dataSourceManager;
     private final HikariConfigFactory configFactory;
-    private static final Logger log = LoggerFactory.getLogger(TransactionManager.class);
 
-    public TransactionManager(DataSourceManager dataSourceManager, HikariConfigFactory configFactory) {
-        this.dataSourceManager = dataSourceManager;
-        this.configFactory = configFactory;
+    public  TransactionManager(DataSourceManager dataSourceManager, HikariConfigFactory configFactory){
+
+        this.dataSourceManager=dataSourceManager;
+        this.configFactory=configFactory;
+
     }
 
     public <T> T execute(TransactionCallback<T> callback){
 
-        DataSource ds = dataSourceManager.getOrCreate(DataSourceType.APPLICATION,
-                configFactory.create(DataSourceType.APPLICATION));
+        DataSource ds = dataSourceManager.getOrCreate(
+                DataSourceType.APPLICATION,
+                configFactory.create(DataSourceType.APPLICATION)
+        );
 
-        try(Connection con = ds.getConnection()) {
-
+        try(Connection con = ds.getConnection()){
             try {
                 con.setAutoCommit(false);
 
-                T result = callback.doInTransaction(con);
+                T result = callback.execute(con);
 
                 con.commit();
                 return result;
@@ -42,8 +43,9 @@ public class TransactionManager {
                 throw ex;
             }
         } catch (Exception e) {
-            log.error("Transaction failed with root cause : {}", e.toString());
             throw new RuntimeException("Transaction failed",e);
         }
     }
+
 }
+

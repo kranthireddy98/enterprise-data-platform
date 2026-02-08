@@ -1,6 +1,6 @@
 package com.EnterprisePlatform.repository.query;
 
-import com.EnterprisePlatform.repository.support.JdbcExecutor;
+import com.EnterprisePlatform.executor.JdbcExecutor;
 import com.EnterprisePlatform.repository.support.SqlKey;
 import com.EnterprisePlatform.repository.support.SqlRegistry;
 import org.springframework.stereotype.Repository;
