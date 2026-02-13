@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,7 +32,7 @@ public class CustomerCommandRepository {
                params );
     }
 
-    public Long insert(Connection con, ResolvedCustomerData data) {
+    public Long insert(Connection con, ResolvedCustomerData data) throws Exception {
 
         log.info("Inserting for: {}",data.customerNumber());
 

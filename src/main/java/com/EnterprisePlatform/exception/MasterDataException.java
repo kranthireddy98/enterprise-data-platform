@@ -1,4 +1,4 @@
-package com.EnterprisePlatform.master.exception;
+package com.EnterprisePlatform.exception;
 
 public class MasterDataException extends RuntimeException{
 

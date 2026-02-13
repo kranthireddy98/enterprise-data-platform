@@ -18,7 +18,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
-@Slf4j
+
 @Component
 public class JdbcExecutor {
 
@@ -58,13 +58,13 @@ public class JdbcExecutor {
             Connection con,
             String sql,
             Map<String,Object> params
-    ){
+    ) throws Exception {
         try (PreparedStatement ps = binder.bind(con,sql,params);
              ResultSet rs = ps.executeQuery()){
             return  mapper.map(rs);
         }catch (Exception e){
             log.error("Error: {}",e);
-            throw  new RuntimeException(e);
+            throw e;
         }
     }
 

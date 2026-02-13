@@ -1,9 +1,8 @@
 package com.EnterprisePlatform.master;
 
-import com.EnterprisePlatform.master.exception.MasterDataCorruptionException;
-import com.EnterprisePlatform.master.exception.MasterDataNotFoundException;
+import com.EnterprisePlatform.exception.MasterDataCorruptionException;
+import com.EnterprisePlatform.exception.MasterDataNotFoundException;
 import com.EnterprisePlatform.repository.query.MasterQueryRepository;
-import jakarta.validation.constraints.Max;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 

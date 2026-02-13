@@ -1,7 +1,7 @@
 package com.EnterprisePlatform.master;
 
-import com.EnterprisePlatform.master.exception.MasterDataCorruptionException;
-import com.EnterprisePlatform.master.exception.MasterDataNotFoundException;
+import com.EnterprisePlatform.exception.MasterDataCorruptionException;
+import com.EnterprisePlatform.exception.MasterDataNotFoundException;
 import com.EnterprisePlatform.repository.query.MasterQueryRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;

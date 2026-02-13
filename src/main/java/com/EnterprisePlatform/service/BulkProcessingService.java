@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.sql.SQLException;
 import java.time.LocalDateTime;
 
 @Service
@@ -70,14 +71,21 @@ public class BulkProcessingService {
                 success++;
             }catch (Exception ex){
                 log.error(String.valueOf(ex));
+               String message;
+                if(ex instanceof SQLException && ex.getMessage().contains("UNIQUE KEY")){
+                    message = "Customer with number " + row.customerNumber()  +" already exists";
+                }else {
+                    message = ex.getMessage();
+                }
                 errorRepo.recordError(
                         rowId,
                         "ROW_ERROR",
-                        ex.getMessage()
+                       message
                 );
 
                 rowRepo.markFailed(rowId);
                 failed++;
+
             }
         }
 
