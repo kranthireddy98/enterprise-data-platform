@@ -1,4 +1,4 @@
-package com.EnterprisePlatform.infrastructure.logging;
+package com.EnterprisePlatform.logging;
 
 import com.EnterprisePlatform.config.profile.AppProperties;
 import jakarta.servlet.FilterChain;

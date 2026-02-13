@@ -8,6 +8,7 @@ public enum SqlKey {
     CUSTOMER_FETCH_ALL("sql/customer/select_customers.sql"),
     CUSTOMER_INSERT("sql/customer/insert_customers.sql"),
     CUSTOMER_DELETE("sql/customer/select_customers.sql"),
+    CUSTOMER_LAST_ID("sql/customer/customer_last_id.sql"),
 
 
 
@@ -31,7 +32,24 @@ public enum SqlKey {
     MASTER_PAYMENT_METHOD_BY_CODE("sql/master/paymentmethod/fetch_payment_method_by_code.sql"),
 
     //Tax Code
-    MASTER_TAX_CODE_BY_CODE("sql/master/taxcode/fetch_taxcode_by_code.sql");
+    MASTER_TAX_CODE_BY_CODE("sql/master/taxcode/fetch_taxcode_by_code.sql"),
+
+    //billing
+    BILLING_INSERT("sql/billing/insert_billing.sql"),
+
+    //Bulk Ops
+    BULK_ERROR_INSERT("sql/ops/bulk_error_insert.sql"),
+    BULK_JOB_CREATE("sql/ops/bulk_job_create.sql"),
+    BULK_JOB_LAST_ID("sql/ops/bulk_job_last_id.sql"),
+    BULK_JOB_COMPLETE("sql/ops/bulk_job_complete.sql"),
+
+    BULK_ROW_CREATE("sql/ops/bulk_row_create.sql"),
+    BULK_ROW_LAST_ID("sql/ops/bulk_row_last_id.sql"),
+    BULK_ROW_MARK_SUCCESS("sql/ops/bulk_row_mark_success.sql"),
+    BULK_ROW_MARK_FAILED("sql/ops/bulk_row_mark_failed.sql");
+
+
+
 
     private final String key;
 

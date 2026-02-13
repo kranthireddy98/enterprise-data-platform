@@ -26,7 +26,7 @@ public class CustomerController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteCustomer(@PathVariable Long id){
+    public ResponseEntity<Void> deleteCustomer(@PathVariable Long id) throws Exception {
 
         boolean deleted = service.deleteCustomer(id);
 
@@ -38,7 +38,7 @@ public class CustomerController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> createCustomer(@RequestBody CustomerCreateRequest request){
+    public ResponseEntity<Void> createCustomer(@RequestBody CustomerCreateRequest request) throws Exception {
         service.createCustomer(request);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }

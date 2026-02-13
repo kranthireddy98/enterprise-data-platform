@@ -37,7 +37,7 @@ public class CustomerService {
         return queryRepository.fetchAll();
     }
 
-    public boolean deleteCustomer(Long customerId){
+    public boolean deleteCustomer(Long customerId) throws Exception {
         boolean isDeleted = transactionManager.execute(con -> {
             int deleted = customerCommandRepository.delete(con, customerId);
             if (deleted == 0) {
@@ -50,7 +50,7 @@ public class CustomerService {
         return isDeleted;
     }
 
-    public void createCustomer(CustomerCreateRequest request) {
+    public void createCustomer(CustomerCreateRequest request) throws Exception {
 
         transactionManager.execute(con -> {
 

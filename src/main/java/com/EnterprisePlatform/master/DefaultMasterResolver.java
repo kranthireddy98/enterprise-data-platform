@@ -3,14 +3,19 @@ package com.EnterprisePlatform.master;
 import com.EnterprisePlatform.master.exception.MasterDataCorruptionException;
 import com.EnterprisePlatform.master.exception.MasterDataNotFoundException;
 import com.EnterprisePlatform.repository.query.MasterQueryRepository;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 @Component
 public class DefaultMasterResolver implements MasterResolver{
 
+    private static final Logger log = LoggerFactory.getLogger(DefaultMasterResolver.class);
     private final MasterQueryRepository repository;
 
     public DefaultMasterResolver(MasterQueryRepository repository) {
@@ -26,7 +31,7 @@ public class DefaultMasterResolver implements MasterResolver{
                 request.code(),
                 request.asOfDate()
         );
-
+        log.info("Master rows for type: {}, data: {}",request.type(),rows);
         if(rows.isEmpty()){
             throw new MasterDataNotFoundException(
                     request.type().name(),

@@ -6,11 +6,12 @@ INSERT INTO core.customer (
     effective_end_date,
     is_active
 )
+    OUTPUT INSERTED.customer_id
 VALUES (
            :customerNumber,
            :fullName,
            :countryId,
-           :effectiveStartDate,
-           NULL,
+           :startDate,
+           :endDate,
            1
        );
