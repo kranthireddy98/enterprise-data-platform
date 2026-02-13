@@ -1,8 +1,8 @@
 package com.EnterprisePlatform.bootstrap;
 
-import com.EnterprisePlatform.infrastructure.datasource.DataSourceManager;
-import com.EnterprisePlatform.infrastructure.datasource.DataSourceType;
-import com.EnterprisePlatform.infrastructure.datasource.HikariConfigFactory;
+import com.EnterprisePlatform.datasource.DataSourceManager;
+import com.EnterprisePlatform.datasource.DataSourceType;
+import com.EnterprisePlatform.datasource.HikariConfigFactory;
 import jakarta.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

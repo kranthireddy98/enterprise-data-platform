@@ -1,4 +1,4 @@
-package com.EnterprisePlatform.infrastructure.datasource;
+package com.EnterprisePlatform.datasource;
 
 import com.EnterprisePlatform.config.profile.DbProperties;
 import com.zaxxer.hikari.HikariConfig;

@@ -1,4 +1,4 @@
-package com.EnterprisePlatform.infrastructure.datasource;
+package com.EnterprisePlatform.datasource;
 
 public enum DataSourceType {
     MASTER,

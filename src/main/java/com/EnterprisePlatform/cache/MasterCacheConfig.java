@@ -15,7 +15,7 @@ public class MasterCacheConfig {
 
         return Caffeine.newBuilder()
                 .maximumSize(10_000)
-                .expireAfterWrite(Duration.ofMinutes(30))
+                .expireAfterWrite(Duration.ofMinutes(1))
                 .recordStats()
                 .build();
     }

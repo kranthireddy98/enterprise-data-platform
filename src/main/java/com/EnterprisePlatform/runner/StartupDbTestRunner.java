@@ -1,8 +1,8 @@
 package com.EnterprisePlatform.runner;
 
-import com.EnterprisePlatform.infrastructure.datasource.DataSourceManager;
-import com.EnterprisePlatform.infrastructure.datasource.DataSourceType;
-import com.EnterprisePlatform.infrastructure.datasource.HikariConfigFactory;
+import com.EnterprisePlatform.datasource.DataSourceManager;
+import com.EnterprisePlatform.datasource.DataSourceType;
+import com.EnterprisePlatform.datasource.HikariConfigFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
