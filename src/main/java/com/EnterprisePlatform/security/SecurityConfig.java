@@ -1,4 +1,4 @@
-package com.EnterprisePlatform.infrastructure.security;
+package com.EnterprisePlatform.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

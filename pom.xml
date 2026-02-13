@@ -50,6 +50,12 @@
             <optional>true</optional>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+        </dependency>
+
+
         <!-- Observability -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

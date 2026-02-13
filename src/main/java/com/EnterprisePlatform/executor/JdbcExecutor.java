@@ -63,7 +63,6 @@ public class JdbcExecutor {
              ResultSet rs = ps.executeQuery()){
             return  mapper.map(rs);
         }catch (Exception e){
-            log.error("Error: {}",e);
             throw e;
         }
     }

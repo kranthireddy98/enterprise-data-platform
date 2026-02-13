@@ -28,8 +28,8 @@ public class NamedParameterBinder {
         List<Object> values = new ArrayList<>();
 
         String parsedSql = parse(sql,params,values);
-        String debugSql = buildDebugSql(parsedSql, values);
-        log.info(debugSql);
+       // String debugSql = buildDebugSql(parsedSql, values);
+        //log.info(debugSql);
         PreparedStatement ps = con.prepareStatement(parsedSql);
 
         for(int i = 0;i<values.size();i++){
